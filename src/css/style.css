@@ -8,7 +8,9 @@
 HTML, body{
   font-family : sans-serif;
   background: #e2e1e0;
-    text-align : center;
+  text-align : center;
+  background-image: url("./images/body_bg.png");
+
 }
 .pokeapp{
     padding : 16px;
@@ -26,11 +28,52 @@ HTML, body{
         flex-basis : 25%;
     padding : 8px;
     box-sizing: border-box;
-
+    position: relative;
+    height: 25vh;
 }
 .pokemon--species--container{
     padding : 8px;
-    background : white;
+    background : #616161 ;
     cursor : pointer;
- box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    height: 95%;
+}
+.pokemon--species--name{
+  color: white;
+}
+.pokemon--species--sprite{
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: 2;
+  transition: transform .2s; /* Animation */
+
+}
+.pokemon--species--sprite:hover{
+  transform: scale(1.2);
+}
+.pokemon--species--background{
+  /* color: #616161; */
+  color: #525252;
+  font-size: 11vw;
+  font-family: "Flexo-Bold",arial,sans-serif;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  position: static;
+  text-align: center;
+}
+.pokemon--list--sprite{
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+top: 50%;
+transform: translateY(-50%);
 }

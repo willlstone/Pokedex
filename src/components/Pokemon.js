@@ -1,19 +1,29 @@
 import React from "react";
+import Slide from 'react-reveal/Slide';
 
-//The Pokemon component will show an individual Pokemon monster
-// It shows an image of the Pokemon and
-// shows the name of it as well.
+
 class Pokemon extends React.Component{
+
+    formatId = (id) => {
+        let stringId = id + '';
+        while (stringId.length < 3) {
+            stringId = '0' + stringId;
+        }
+        return stringId;
+    };
+
     render(){
       const {pokemon,id} = this.props;
-      return <div className="pokemon--species">
+      return <Slide left>
+      <div className="pokemon--species">
               <div className="pokemon--species--container">
+                  <div className="pokemon--species--background">{this.formatId(id)}</div>
                 <div className="pokemon--species--sprite">
-                  <img src={`../../sprites/${id}.png`} />
+                  <img className="pokemon--list--sprite" src={`../../images/pokemon/${id}.png`} />
                 </div>
-                <div className="pokemon--species--name"> {pokemon.name} </div>
               </div>
-            </div>;
+            </div>
+            </Slide> 
       }
   }
 
